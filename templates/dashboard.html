@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>🚀 Smart AI Dashboard V6</title>
+
+<link rel="manifest" href="/static/manifest.json">
+
+</head>
+<body>
+
+<h2>🚀 Smart AI Dashboard V6</h2>
+
+<input id="input" placeholder="Type or speak..." />
+<button id="send">Send</button>
+<button id="mic">🎤</button>
+<div id="chat"></div>
+
+<script>
+let input = document.getElementById("input");
+let sendBtn = document.getElementById("send");
+let micBtn = document.getElementById("mic");
+let chat = document.getElementById("chat");
+
+// 🎤 VOICE INPUT
+micBtn.onclick = () => {
+  let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  recognition.lang = "am-ET";
+
+  recognition.onresult = (event) => {
+    input.value = event.results[0][0].transcript;
+  };
+
+  recognition.start();
+};
+
+// 🔊 VOICE OUTPUT
+function speak(text) {
+  let speech = new SpeechSynthesisUtterance(text);
+
+  if (/[\u1200-\u137F]/.test(text)) {
+    speech.lang = "am-ET";
+  } else {
+    speech.lang = "en-US";
+  }
+
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(speech);
+}
+
+// 💬 ADD MESSAGE
+function addMessage(text) {
+  let div = document.createElement("div");
+  div.innerText = text;
+  chat.appendChild(div);
+}
+
+// 📩 SEND
+sendBtn.onclick = () => {
+  let text = input.value;
+
+  fetch("/api/ai", {
+    method: "POST",
+    body: JSON.stringify({message: text}),
+    headers: {"Content-Type": "application/json"}
+  })
+  .then(res => res.json())
+  .then(data => {
+    addMessage("🤖 " + data.response);
+
+    setTimeout(() => {
+      speak(data.response);
+    }, 200);
+  });
+};
+</script>
+
+<script>
+function testVoice() {
+    const speech = new SpeechSynthesisUtterance(
+        "Hello Aba Mela Dashboard"
+    );
+
+    speech.lang = "en-US";
+    speech.rate = 1;
+    speech.pitch = 1;
+
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(speech);
+}
+</script>
+
+</script>
+
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/static/service-worker.js");
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++0
+
