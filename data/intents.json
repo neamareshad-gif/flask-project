@@ -1,0 +1,81 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[
+  {
+    "tag": "greeting",
+    "patterns": [
+      "hello", "hi", "hey", "hi there", "hello robot",
+      "selam", "salam", "ሰላም", "ሰላም ሰላም"
+    ],
+    "responses": ["Hello 👋", "ሰላም 😊"]
+  },
+  {
+    "tag": "who",
+    "patterns": [
+      "who are you", "what are you", "who r u",
+      "አንተ ማን ነህ", "ማን ነህ"
+    ],
+    "responses": ["I am your AI assistant 🤖", "እኔ የአንተ AI ረዳት ነኝ 🤖"]
+  },
+  {
+    "tag": "yes",
+    "patterns": [
+      "yes", "yeah", "yep", "ok", "okay", "sure"
+    ],
+    "responses": ["👍 Okay!", "Got it ✔️"]
+  },
+  {
+    "tag": "ai",
+    "patterns": [
+      "ai", "what is ai", "define ai",
+      "AI ምንድነው", "ኤአይ ምንድነው"
+    ],
+    "responses": ["AI means Artificial Intelligence 🤖"]
+  },
+  {
+    "tag": "thanks",
+    "patterns": [
+      "thanks", "thank you", "tnx",
+      "አመሰግናለሁ", "አመሰግናለሁ"
+    ],
+    "responses": ["You’re welcome 😊", "እንኳን ደስ አለኝ 😊"]
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
