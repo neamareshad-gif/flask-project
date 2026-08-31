@@ -1,0 +1,44 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[
+  {"input": "ሰላም", "response": "ሰላም ነው 😊"},
+  {"input": "እንዴት ነህ", "response": "ደህና ነኝ 👍"},
+  {"input": "hello", "response": "Hello 👋"},
+  {"input": "how are you", "response": "I am fine 👍"},
+  {"input": "what is ai", "response": "AI means Artificial Intelligence 🤖"},
+  {"input": "ai ምንድነው", "response": "AI ማለት Artificial Intelligence ነው 🤖"},
+  {"input": "መይቶንታ", "response": "መጥሩቹ ዬ'ባ"},
+  {"input": "ዬ'ንዶ", "response": "ዬቫ"}
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
