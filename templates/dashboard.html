@@ -10,6 +10,26 @@
 
 <h2>🚀 Smart AI Dashboard V6</h2>
 
+<!-- ABA MELA TOOLS -->
+<div id="tools">
+  <button type="button" onclick="window.scrollTo(0,0)">🏠 Home</button>
+  <button type="button" onclick="document.getElementById('input').focus()">💬 Chat</button>
+  <button type="button" onclick="document.getElementById('mic').click()">🎤 Voice Input</button>
+  <button type="button" onclick="readAloud()">📖 Read Aloud</button>
+  <button type="button" onclick="toggleLanguage()">🌐 Language</button>
+  <button type="button" onclick="document.getElementById('imagePicker').click()">🖼️ Image</button>
+  <button type="button" onclick="toggleSettings()">⚙️ Settings</button>
+</div>
+
+<div id="settingsPanel" hidden>
+  <p>⚙️ Aba Mela Settings</p>
+  <label for="readText">Text to read aloud:</label>
+  <input id="readText" placeholder="Type text to read..." />
+  <input id="imagePicker" type="file" accept="image/*" hidden />
+  <div id="imagePreview"></div>
+</div>
+<!-- END ABA MELA TOOLS --
+
 <input id="input" placeholder="Type or speak..." />
 <button id="send">Send</button>
 <button id="mic">🎤</button>
