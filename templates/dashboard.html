@@ -117,7 +117,28 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/static/service-worker.js");
 }
 </script>
+<script>
+function toggleSettings() {
+    const panel = document.getElementById("settingsPanel");
+    if (panel) {
+        panel.hidden = !panel.hidden;
+    }
+}
 
+function readAloud() {
+    const field = document.getElementById("readText");
+    const text = field ? field.value.trim() : "";
+
+    if (!text) {
+        const panel = document.getElementById("settingsPanel");
+        if (panel) panel.hidden = false;
+        if (field) field.focus();
+        return;
+    }
+
+    speak(text);
+}
+</script>
 </body>
 </html>
 
