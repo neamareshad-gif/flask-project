@@ -35,7 +35,33 @@
 <button id="send">Send</button>
 <button id="mic">🎤</button>
 <div id="chat"></div>
+<!-- ABA MELA APP MORE -->
+<div id="appMore">
+  <button type="button"
+          onclick="toggleAppMore()"
+          aria-expanded="false"
+          aria-controls="appMoreMenu">
+    ☰ App More
+  </button>
 
+  <div id="appMoreMenu" hidden>
+    <button type="button" onclick="openAppPage('advertising')">📢 Advertising</button>
+    <button type="button" onclick="openAppPage('search')">🔎 Search</button>
+    <button type="button" onclick="openAppPage('social')">📣 Social Media Broadcast</button>
+    <button type="button" onclick="openAppPage('tutorial')">📚 Tutorial</button>
+    <button type="button" onclick="openAppPage('commodities')">🛒 Commodities</button>
+    <button type="button" onclick="openAppPage('network')">📡 Telecommunications &amp; Network</button>
+    <button type="button" onclick="openAppPage('coding')">💻 Coding Guideline</button>
+    <button type="button" onclick="openAppPage('location')">📍 Location &amp; Mapping</button>
+    <button type="button" onclick="openAppPage('email')">✉️ Email Address</button>
+    <button type="button" onclick="openAppPage('users')">👥 Customers / Users</button>
+    <button type="button" onclick="openAppPage('login')">🔐 Login</button>
+    <button type="button" onclick="openAppPage('register')">📝 Register</button>
+    <button type="button" onclick="openAppPage('logout')">🚪 Logout</button>
+    <button type="button" onclick="closeAppMore()">↩️ Back</button>
+  </div>
+</div>
+<!-- END ABA MELA APP MORE -->
 <script>
 let input = document.getElementById("input");
 let sendBtn = document.getElementById("send");
@@ -137,6 +163,36 @@ function readAloud() {
     }
 
     speak(text);
+}
+</script>
+<script>
+function toggleAppMore() {
+    const menu = document.getElementById("appMoreMenu");
+    const button = document.querySelector(
+        '#appMore button[aria-controls="appMoreMenu"]'
+    );
+
+    if (!menu || !button) return;
+
+    menu.hidden = !menu.hidden;
+    button.setAttribute("aria-expanded", String(!menu.hidden));
+}
+
+function closeAppMore() {
+    const menu = document.getElementById("appMoreMenu");
+    const button = document.querySelector(
+        '#appMore button[aria-controls="appMoreMenu"]'
+    );
+
+    if (!menu || !button) return;
+
+    menu.hidden = true;
+    button.setAttribute("aria-expanded", "false");
+}
+
+function openAppPage(page) {
+    // የእያንዳንዱን አገልግሎት ገጽ በቀጣይ እናገናኛለን።
+    console.log("Selected App More page:", page);
 }
 </script>
 </body>
