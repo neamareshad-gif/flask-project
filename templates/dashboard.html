@@ -164,7 +164,40 @@ function readAloud() {
   
     speak(text);  
 }  
-</script>  </body>  
+</script> 
+
+<script>
+function toggleAppMore() {
+    const menu = document.getElementById("appMoreMenu");
+    const button = document.querySelector(
+        '#appMore button[aria-controls="appMoreMenu"]'
+    );
+
+    if (!menu || !button) return;
+
+    menu.hidden = !menu.hidden;
+    button.setAttribute("aria-expanded", String(!menu.hidden));
+}
+
+function closeAppMore() {
+    const menu = document.getElementById("appMoreMenu");
+    const button = document.querySelector(
+        '#appMore button[aria-controls="appMoreMenu"]'
+    );
+
+    if (!menu || !button) return;
+
+    menu.hidden = true;
+    button.setAttribute("aria-expanded", "false");
+}
+
+function openAppPage(page) {
+    // የእያንዳንዱን አገልግሎት ገጽ በቀጣይ እናገናኛለን።
+    console.log("Selected App More page:", page);
+}
+</script>
+
+ </body>  
 </html>  
 
 
