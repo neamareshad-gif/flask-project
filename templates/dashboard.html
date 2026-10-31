@@ -190,14 +190,34 @@ function closeAppMore() {
     button.setAttribute("aria-expanded", "false");
 }
 
-function openAppPage(page) {
-    // የእያንዳንዱን አገልግሎት ገጽ በቀጣይ እናገናኛለን።
-    console.log("Selected App More page:", page);
-}
-</script>
-</body>
-</html>
 
+
+function openAppPage(page) {
+    if (page === "advertising") {
+        const chat = document.getElementById("chat");
+
+        if (!chat) {
+            alert("Advertising could not open: chat area not found.");
+            return;
+        }
+
+        chat.innerHTML = `
+            <section id="advertisingPage">
+                <h2>📢 Advertising</h2>
+                <p>Welcome to AbaMelaAI Advertising.</p>
+                <p>Advertising services will be added here.</p>
+                <button type="button" onclick="closeAdvertising()">↩️ Back to Chat</button>
+            </section>
+        `;
+
+        closeAppMore();
+    }
+}
+
+function closeAdvertising() {
+    const page = document.getElementById("advertisingPage");
+    if (page) page.remove();
+}
 
 
 
